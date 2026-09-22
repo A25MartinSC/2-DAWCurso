@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #contenedor {
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+
+        div {
+            width: 200px;
+            height: 300px;
+            border: 1px dotted black
+        }
+
+        #azul {
+            background-color: blue;
+        }
+
+        #blanco {
+            background-color: rgb(255, 255, 255);
+        }
+
+        #rojo {
+            background-color: rgb(199, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contenedor">
+        <div id="azul"></div>
+        <div id="blanco"></div>
+        <div id="rojo"></div>
+    </div>
+</body>
+
+</html>

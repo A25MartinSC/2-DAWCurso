@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #contorno {
+            width: 700px;
+            height: 700px;
+            border: 2px solid rgb(0, 0, 0);
+            overflow: auto;
+            display: table;
+        }
+
+        #formas1,
+        #formas2 {
+            width: 48%;
+            height: 99%;
+            display: flex;
+            flex-direction: column;
+            margin: 1%;
+        }
+
+        #formas2 {
+            float: right;
+        }
+
+        #formas1 {
+            float: left;
+
+        }
+
+        #verde,
+        #rojo {
+            margin: 2%;
+            width: 100%;
+            height: 47%;
+
+        }
+
+        #rojo {
+            background-color: red;
+        }
+
+        #verde {
+            background-color: green;
+        }
+
+        #azul,
+        #morado {
+            margin: 2%;
+            width: 96%;
+
+        }
+
+        #azul {
+            height: 28%;
+            background-color: rgb(6, 10, 247);
+        }
+
+        #morado {
+            height: 66%;
+            background-color: rgb(121, 46, 182);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contorno">
+        <div id="formas1">
+            <div id="verde"></div>
+            <div id="rojo"></div>
+        </div>
+
+        <div id="formas2">
+
+            <div id="azul"></div>
+            <div id="morado"></div>
+
+        </div>
+    </div>
+</body>
+
+</html>

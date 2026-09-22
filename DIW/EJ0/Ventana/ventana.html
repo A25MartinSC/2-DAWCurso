@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi ventana</title>
+    <link rel="stylesheet" href="ventana.css">
+</head>
+
+<body>
+
+    <div class="ventana" id="ventana">
+        <div class="titulo">
+            <button onclick="this.closest('.ventana').style.display='none'">X</button>
+        </div>
+        <div class="contenido">
+            <p>Esta es mi ventana</p>
+        </div>
+    </div>
+
+    <script src="ventana.js"></script>
+</body>
+
+</html>

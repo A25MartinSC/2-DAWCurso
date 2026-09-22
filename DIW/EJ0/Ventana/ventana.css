@@ -1,0 +1,40 @@
+ body {
+     margin: 0;
+     height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .ventana {
+     width: 300px;
+     background: white;
+     border-radius: 12px;
+     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+     overflow: hidden;
+ }
+
+ .titulo {
+     background-color: rgb(43, 42, 42);
+     padding: 15px;
+     position: relative;
+     cursor: move;
+     user-select: none;
+     touch-action: none;
+ }
+
+ button {
+     background-color: rgb(238, 8, 8);
+     position: absolute;
+     top: 8px;
+     right: 10px;
+     border: none;
+     border-radius: 5px;
+     font-size: 12px;
+     cursor: pointer;
+     color: white;
+ }
+
+ .contenido {
+     padding: 20px;
+ }

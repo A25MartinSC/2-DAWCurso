@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    #contorno {
+      width: 350px;
+      padding: 10px;
+      border: 1px dotted black;
+      overflow: auto;
+      height: 35%;
+      display: grid;
+      grid-template-columns: 1 1;
+
+    }
+
+    #naranja,
+    #azul {
+      width: 200px;
+      height: 150px;
+    }
+
+    #naranja {
+      width: 98%;
+      margin: 1%;
+      background-color: rgb(250, 127, 78);
+    }
+
+    #azul {
+      width: 98%;
+      margin: 1%;
+      background-color: rgb(101, 188, 228);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="contorno">
+    <div id="naranja"></div>
+    <div id="azul"></div>
+  </div>
+</body>
+
+</html>

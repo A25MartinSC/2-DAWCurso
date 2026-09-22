@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #contorno {
+            width: 525px;
+            height: 452px;
+            display: grid;
+            grid-template-columns: 330fr 180fr;
+            grid-template-rows: 100%;
+            column-gap: 2.86%;
+        }
+
+        #formas1 {
+            height: 100%;
+            display: grid;
+            grid-template-columns: 125fr 190fr;
+            grid-template-rows: 220fr 217fr;
+            gap: 3.32% 4.55%;
+        }
+
+        #formas2 {
+            height: 100%;
+            display: grid;
+            grid-template-rows: 110fr 262fr 50fr;
+            row-gap: 3.32%;
+        }
+
+
+        #turquesa {
+            grid-column: 1 / -1;
+            background-color: rgb(124, 241, 195);
+        }
+
+        #caja11 {
+            grid-column: 1;
+            grid-row: 2;
+            height: 100%;
+            display: grid;
+            grid-template-rows: 63fr 139fr;
+            row-gap: 6.91%;
+        }
+
+        #rosa {
+            grid-column: 2;
+            grid-row: 2;
+            background-color: rgb(233, 91, 214);
+        }
+
+        #rojo {
+            background-color: red;
+        }
+
+        #naranja {
+            background-color: rgb(255, 107, 0);
+        }
+
+
+        #verde {
+            background-color: rgb(74, 148, 6);
+        }
+
+        #azul {
+            background-color: rgb(45, 126, 207);
+        }
+
+        #marron {
+            background-color: rgb(221, 181, 121);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contorno">
+        <div id="formas1">
+
+            <div id="turquesa"></div>
+
+            <div id="rosa"></div>
+
+            <div id="caja11">
+                <div id="rojo"></div>
+                <div id="naranja"></div>
+            </div>
+
+        </div>
+
+        <div id="formas2">
+
+            <div id="verde"></div>
+            <div id="azul"></div>
+            <div id="marron"></div>
+
+        </div>
+    </div>
+</body>
+
+</html>
