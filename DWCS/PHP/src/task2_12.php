@@ -30,36 +30,38 @@ class Calculator
   public function setNum2($num2)
   {
     $this->num2 = $num2;
+
+    return $this;
   }
 
 
-  public function multiply()
+  function __multiply($num1, $num2)
   {
-    return $this->num1 * $this->num2;
+    return $num1 * $num2;
   }
-
-  public function add()
-  {
-    return $this->num1 + $this->num2;
-  }
-
-
-  public function __toString()
+  function __add($num1, $num2)
   {
     return "num1 = " . $this->num1 . ", num2 = " . $this->num2;
   }
-}
-
-$firstCalcule = new Calculator();
-$firstCalcule->setNum1(10);
-$firstCalcule->setNum2(5);
-
-echo "First Calcule: " . $firstCalcule->getNum1() . " y " . $firstCalcule->getNum2() . "<br>";
-
-
-$secondCalcule = new Calculator(20, 4);
-
-echo "Second Calcule: " . $secondCalcule . "<br>";
-echo "Multiplication: " . $secondCalcule->multiply() . "<br>";
-echo "Addition: " . $secondCalcule->add() . "<br>";
+} //class
+$apple = new Fruit("apple", "green");
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <?php
+  echo $apple;
+  $apple->setColor("red");
+  echo "<br><br>";
+  echo $apple->getColor();
+  ?>
+</body>
+
+</html>
