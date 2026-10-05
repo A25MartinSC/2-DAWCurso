@@ -1,9 +1,11 @@
 <?php
-class Fruit
+class Calculator
 {
   private $num1;
   private $num2;
-  function __construct($num1, $num2)
+
+
+  public function __construct($num1 = 0, $num2 = 0)
   {
     $this->num1 = $num1;
     $this->num2 = $num2;
@@ -13,11 +15,10 @@ class Fruit
   {
     return $this->num1;
   }
+
   public function setNum1($num1)
   {
     $this->num1 = $num1;
-
-    return $this;
   }
 
   public function getNum2()
@@ -28,20 +29,25 @@ class Fruit
   public function setNum2($num2)
   {
     $this->num2 = $num2;
-
-    return $this;
   }
 
-  function __multiply($num1, $num2)
+
+  public function multiply()
   {
-    return $num1 * $num2;
+    return $this->num1 * $this->num2;
   }
-  function __add($num1, $num2)
+
+  public function add()
   {
-    return $num1 + $num2;
+    return $this->num1 + $this->num2;
   }
-} //class
-$apple = new Fruit("apple", "green");
+
+
+  public function __toString()
+  {
+    return "num1 = " . $this->num1 . ", num2 = " . $this->num2;
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,10 +60,21 @@ $apple = new Fruit("apple", "green");
 
 <body>
   <?php
-  echo $apple;
-  $apple->setColor("red");
-  echo "<br><br>";
-  echo $apple->getColor();
+  $firstCalcule = new Calculator();
+  $firstCalcule->setNum1(10);
+  $firstCalcule->setNum2(5);
+
+  echo "Los numeros son: " . $firstCalcule->getNum1() . " - " . $firstCalcule->getNum2() . "<br>";
+
+
+  $secondCalcule = new Calculator(20, 2);
+  echo $secondCalcule;
+
+  echo "<br> Segundo calculo: " . $secondCalcule . "<br>";
+  echo "<br>Multiplicacion: " . $secondCalcule->multiply() . "<br>";
+  echo "<br>Suma: " . $secondCalcule->add() . "<br>";
+
+
   ?>
 </body>
 
