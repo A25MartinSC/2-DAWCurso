@@ -34,7 +34,7 @@
   <h1>First practice using forms.</h1>
 
 
-  <form action="manage.php" method="post">
+  <form action="manage11.php" method="post">
     <label for="idName">Name and surnames:</label>
     <input type="text" id="idName" name="name" value="<?php echo htmlspecialchars($name); ?>">
 

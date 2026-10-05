@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #181825;
+    color: #cdd6f4;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.tarjetaVolumen {
+    padding: 30px;
+    text-align: center;
+    width: 320px;
+}
+
+.instruccion {
+    font-size: 13px;
+    color: #f9e2af;
+    margin-bottom: 20px;
+}
+
+
+.pantallaVolumen {
+    font-size: 55px;
+    font-weight: bold;
+    color: #fab387;
+    background-color: #1e1e2e;
+    border-radius: 12px;
+    padding: 10px;
+    border: 2px solid #fab387;
+    margin-bottom: 20px;
+}
+
+.contenedorBarra {
+    width: 100%;
+    height: 14px;
+    background-color: #181825;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.barraNivel {
+    width: 50%;
+    height: 100%;
+    background-color: #a6e3a1;
+    transition: width 0.1s linear;
+}
+
+
+.botonParar {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background-color: #f38ba8;
+    color: #11111b;
+    cursor: pointer;
+
+}
