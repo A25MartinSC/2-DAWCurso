@@ -6,20 +6,28 @@ class MyGuests
   private String $lastname;
   private String $email;
   private datetime $reg_date;
+  function __toString()
+  {
+    return "<br>$this->id, $this->firstname, $this->lastname, $this->email";
+  }
 
-  /**
-   * Get the value of firstname
-   */
+  public function getId()
+  {
+    return $this->id;
+  }
+
+  public function setId($id)
+  {
+    $this->id = $id;
+
+    return $this;
+  }
+
   public function getFirstname()
   {
     return $this->firstname;
   }
 
-  /**
-   * Set the value of firstname
-   *
-   * @return  self
-   */
   public function setFirstname($firstname)
   {
     $this->firstname = $firstname;
@@ -27,19 +35,11 @@ class MyGuests
     return $this;
   }
 
-  /**
-   * Get the value of lastname
-   */
   public function getLastname()
   {
     return $this->lastname;
   }
 
-  /**
-   * Set the value of lastname
-   *
-   * @return  self
-   */
   public function setLastname($lastname)
   {
     $this->lastname = $lastname;
@@ -47,19 +47,11 @@ class MyGuests
     return $this;
   }
 
-  /**
-   * Get the value of email
-   */
   public function getEmail()
   {
     return $this->email;
   }
 
-  /**
-   * Set the value of email
-   *
-   * @return  self
-   */
   public function setEmail($email)
   {
     $this->email = $email;
@@ -67,42 +59,14 @@ class MyGuests
     return $this;
   }
 
-  /**
-   * Get the value of reg_date
-   */
   public function getReg_date()
   {
     return $this->reg_date;
   }
 
-  /**
-   * Set the value of reg_date
-   *
-   * @return  self
-   */
   public function setReg_date($reg_date)
   {
     $this->reg_date = $reg_date;
-
-    return $this;
-  }
-
-  /**
-   * Get the value of id
-   */
-  public function getId()
-  {
-    return $this->id;
-  }
-
-  /**
-   * Set the value of id
-   *
-   * @return  self
-   */
-  public function setId($id)
-  {
-    $this->id = $id;
 
     return $this;
   }

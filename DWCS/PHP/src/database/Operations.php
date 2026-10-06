@@ -2,14 +2,13 @@
 require_once("MyGuests.php");
 class Operations
 {
-  private $conexion;
+  private $conn;
   public function __construct()
   {
     $this->openConnection();
   }
   public function openConnection()
   {
-
     // Database configuration (match your docker-compose.yml)
     $host = 'mysql';          // The service name in docker-compose (not 'localhost')
     $db   = 'app';        // Database name
@@ -27,17 +26,61 @@ class Operations
       PDO::ATTR_EMULATE_PREPARES   => false,                  // Use real prepared statements
     ];
 
-    try {
-      // Create a PDO instance (connect to the database)
-      $this->conexion = new PDO($dsn, $user, $pass, $options);
-      echo "✅ Database connection successful!";
-    } catch (PDOException $e) {
-      // Handle connection errors
-      echo "❌ Database connection failed: " . $e->getMessage();
-    }
+    // Create a PDO instance (connect to the database)
+    $this->conn = new PDO($dsn, $user, $pass, $options);
   }
   public function closeConnection()
   {
-    $this->conexion = null;
+    $this->conn = null;
   }
-}
+  public function getMyGuest($id)
+  {
+    $sqlString = "select id, firstname, lastname, email, reg_date from myguests where id = ?;";
+    $query = $this->conn->prepare($sqlString);
+    $query->execute([$id]); // It executes the sql sentence
+    $rowMyGuest = $query->fetch(); // It accesses the first row of data
+    //Create an object of MyGuest with the contents of the table row
+    $obx = new MyGuests();
+    $obx->setId($rowMyGuest["id"]);
+    $obx->setFirstname($rowMyGuest["firstname"]);
+    $obx->setLastname($rowMyGuest["lastname"]);
+    $obx->setEmail($rowMyGuest["email"]);
+    //$obx->setReg_date($rowMyGuest["reg_date"]);
+    return $obx;
+  }
+  public function getMyGuestList()
+  {
+    $sqlString = "select id, firstname, lastname, email, reg_date from myguests;";
+    $query = $this->conn->prepare($sqlString);
+    $query->execute(); // It executes the sql sentence
+    $myGuestList = array(); //Create an empty list
+    while ($rowMyGuest = $query->fetch()) {
+      //Create an object of MyGuest with the contents of the table row
+      $obx = new MyGuests();
+      $obx->setId($rowMyGuest["id"]);
+      $obx->setFirstname($rowMyGuest["firstname"]);
+      $obx->setLastname($rowMyGuest["lastname"]);
+      $obx->setEmail($rowMyGuest["email"]);
+      //$obx->setReg_date($rowMyGuest["reg_date"]);
+      $myGuestList[] = $obx;
+    }
+    return $myGuestList;
+  }
+  public function addMyGuest(MyGuests $myGuests)
+  { //It receives an object of the class MyGuests
+    try {
+      $this->conn->beginTransaction();
+      $sqlString = "insert into myguests(firstname, lastname, email) values (?, ?, ?);";
+      $query = $this->conn->prepare($sqlString);
+      $query->execute([$myGuests->getFirstname(), $myGuests->getLastname(), $myGuests->getEmail()]); // It executes the sql sentence
+      if ($query->rowCount() > 0) {
+        $this->conn->commit(); //Commit the transaction if everything went well
+        return true;
+      } else return false;
+    } catch (PDOException $erro) {
+      // Roll back the transaction if somthing failed
+      $this->conn->rollback();
+      throw $erro;
+    }
+  }
+} //class
