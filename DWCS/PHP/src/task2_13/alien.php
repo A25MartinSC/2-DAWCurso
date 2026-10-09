@@ -31,6 +31,13 @@
             return self::$numberOfAliens;
         }
     }
+
+    $alien1 = new Alien("Julia");
+    $alien2 = new Alien("hjsla");
+    $alien3 = new Alien("Pebob");
+    $alien4 = new Alien("Marpila");
+
+    echo "<br>Number of aliens created: " . Alien::getNumberOfAliens();
     ?>
 </body>
 

@@ -1,11 +1,11 @@
 <?php
 class MyGuests
 {
-  private int $id;
-  private String $firstname;
-  private String $lastname;
-  private String $email;
-  private datetime $reg_date;
+  private $id;
+  private $firstname;
+  private $lastname;
+  private $email;
+  private $reg_date;
   function __toString()
   {
     return "<br>$this->id, $this->firstname, $this->lastname, $this->email";

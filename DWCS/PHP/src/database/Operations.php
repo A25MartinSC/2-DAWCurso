@@ -45,10 +45,10 @@ class Operations
     $obx->setFirstname($rowMyGuest["firstname"]);
     $obx->setLastname($rowMyGuest["lastname"]);
     $obx->setEmail($rowMyGuest["email"]);
-    //$obx->setReg_date($rowMyGuest["reg_date"]);
+    $obx->setReg_date($rowMyGuest["reg_date"]);
     return $obx;
   }
-  public function getMyGuestList()
+  public function getAllMyGuest()
   {
     $sqlString = "select id, firstname, lastname, email, reg_date from myguests;";
     $query = $this->conn->prepare($sqlString);
@@ -61,20 +61,23 @@ class Operations
       $obx->setFirstname($rowMyGuest["firstname"]);
       $obx->setLastname($rowMyGuest["lastname"]);
       $obx->setEmail($rowMyGuest["email"]);
-      //$obx->setReg_date($rowMyGuest["reg_date"]);
+      $obx->setReg_date($rowMyGuest["reg_date"]);
       $myGuestList[] = $obx;
     }
     return $myGuestList;
   }
-  public function addMyGuest(MyGuests $myGuests)
+  public function addMyGuests(MyGuests $myGuests)
   { //It receives an object of the class MyGuests
     try {
       $this->conn->beginTransaction();
-      $sqlString = "insert into myguests(firstname, lastname, email) values (?, ?, ?);";
+      $sqlString = "insert into myguests(firstname, lastname, email, reg_date) values (?, ?, ?, ?);";
       $query = $this->conn->prepare($sqlString);
-      $query->execute([$myGuests->getFirstname(), $myGuests->getLastname(), $myGuests->getEmail()]); // It executes the sql sentence
+      $query->execute([$myGuests->getFirstname(), $myGuests->getLastname(), $myGuests->getEmail(), $myGuests->getReg_date()]); // It executes the sql sentence
+      $numberOfAddedRows = $query->rowCount();
+      $this->conn->commit();
+
       if ($query->rowCount() > 0) {
-        $this->conn->commit(); //Commit the transaction if everything went well
+        //Commit the transaction if everything went well
         return true;
       } else return false;
     } catch (PDOException $erro) {
@@ -83,4 +86,9 @@ class Operations
       throw $erro;
     }
   }
+  public function updateMyGuests(MyGuests $myGuests)
+  {
+    $sqlString = "update MyGuests set firstname=?, lastname=?, email=?, reg_date=? where id=?";
+  }
+  public function deleteMyGuests($id) {}
 } //class
