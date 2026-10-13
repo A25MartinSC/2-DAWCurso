@@ -44,7 +44,6 @@ class Calculator
     return "num1 = " . $this->num1 . ", num2 = " . $this->num2;
   }
 } //class
-$apple = new Fruit("apple", "green");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,12 +55,7 @@ $apple = new Fruit("apple", "green");
 </head>
 
 <body>
-  <?php
-  echo $apple;
-  $apple->setColor("red");
-  echo "<br><br>";
-  echo $apple->getColor();
-  ?>
+
 </body>
 
 </html>
