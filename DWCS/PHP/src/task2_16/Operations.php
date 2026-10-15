@@ -37,9 +37,13 @@ class Operations
   {
     $sqlString = "select id, dni, name, surname, age from student where id = ?;";
     $query = $this->conn->prepare($sqlString);
-    $query->execute([$id]); // It executes the sql sentence
-    $rowStudent = $query->fetch(); // It accesses the first row of data
-    //Create an object of MyGuest with the contents of the table row
+    $query->execute([$id]);
+    $rowStudent = $query->fetch();
+
+    if (!$rowStudent) {
+      return null; // O lanzar una excepción
+    }
+
     $obx = new Student();
     $obx->setId($rowStudent["id"]);
     $obx->setDni($rowStudent["dni"]);

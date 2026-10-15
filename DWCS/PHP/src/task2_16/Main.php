@@ -28,14 +28,14 @@ require_once("Operations.php");
     $student1->setName("Ana");
     $student1->setSurname("Ferradás");
     $student1->setAge(14);
-    //$numberOfRows = $oper->addMyGuests($guest1);
-    //if ($numberOfRows == 1) echo "<br>New guest added to the database";
-    //else echo "<br>No guest has been added";
+    $numberOfRows = $oper->addStudent($student1);
+    if ($numberOfRows == 1) echo "<br>New student added to the database";
+    else echo "<br>No student has been added";
 
     //Update 
     echo "<h2>Update a student:</h2>";
     $student2 = new Student();
-    $student2->setId(2);
+    $student2->setId(12);
     $student2->setDni("98675432B");
     $student2->setName("Luis");
     $student2->setSurname("Paz");
@@ -45,7 +45,7 @@ require_once("Operations.php");
     else echo "<br>No student has been updated";
 
     //Delete
-    $numberOfRows = $oper->deleteStudent(1);
+    $numberOfRows = $oper->deleteStudent(12);
     if ($numberOfRows == 1) echo "<br>Student deleted from the database";
     else echo "<br>No student has been deleted";
 
