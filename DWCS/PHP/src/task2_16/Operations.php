@@ -71,21 +71,26 @@ class Operations
     return $StudentList;
   }
   public function addStudent(Student $Student)
-  { //It receives an object of the class Student
+  {
     try {
       $this->conn->beginTransaction();
-      $sqlString = "insert into student(id, dni, name, surname, age) values (?, ?, ?, ?, ?);";
+
+      $sqlString = "INSERT INTO student(dni, name, surname, age) VALUES (?, ?, ?, ?);";
       $query = $this->conn->prepare($sqlString);
-      $query->execute([$Student->getId(), $Student->getDni(), $Student->getName(), $Student->getSurname(), $Student->getAge()]); // It executes the sql sentence
+
+      $query->execute([
+        $Student->getDni(),
+        $Student->getName(),
+        $Student->getSurname(),
+        $Student->getAge()
+      ]);
+
       $numberOfAddedRows = $query->rowCount();
       $this->conn->commit();
 
-      if ($query->rowCount() > 0) {
-        //Commit the transaction if everything went well
-        return true;
-      } else return false;
+      return $numberOfAddedRows > 0;
     } catch (PDOException $erro) {
-      // Roll back the transaction if somthing failed
+
       $this->conn->rollback();
       throw $erro;
     }
@@ -125,4 +130,5 @@ class Operations
       throw $e;
     }
   } //delete
+
 } //class
