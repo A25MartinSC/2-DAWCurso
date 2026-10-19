@@ -20,7 +20,7 @@
     justify-content: center;
     margin: 0;
     margin-top: 100px;
-    background-color: #d1e6f7;
+    background-color: #d9e8f5;
   }
 
   .table {
@@ -32,7 +32,7 @@
   table,
   td,
   th {
-    border: 1px solid black;
+    border: 1px solid #acd2e2;
     padding: 10px;
     margin-top: 50px;
   }
@@ -58,11 +58,11 @@
   }
 
   .boton1 {
-    background-color: #4CAF50;
+    background-color: #70bcdd;
   }
 
   .boton2 {
-    background-color: #f44336;
+    background-color: #386579;
     font-weight: bold;
     text-decoration: none;
     color: black;
@@ -77,7 +77,7 @@
   .boton3 {
     font-style: none;
     margin-top: 15px;
-    background-color: #82d8e7;
+    background-color: #acd2e2;
     padding: 18px 45px;
     border: none;
     border-radius: 4px;
@@ -86,6 +86,10 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+  }
+
+  th {
+    background-color: #acd2e2;
   }
 </style>
 

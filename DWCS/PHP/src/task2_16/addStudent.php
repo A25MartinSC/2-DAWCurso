@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   .boton1 {
     margin-top: 15px;
-    background-color: #82d8e7;
+    background-color: #acd2e2;
     padding: 15px 80px;
     border: none;
     border-radius: 4px;

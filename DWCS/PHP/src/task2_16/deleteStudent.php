@@ -1,3 +1,23 @@
+<?php
+require_once "Operations.php";
+
+$id = $_GET['id'] ?? null;
+
+if (!$id) {
+  header("Location: index.php");
+  exit();
+}
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+  $oper = new Operations();
+  $oper->deleteStudent($id);
+  $oper->closeConnection();
+
+  header("Location: index.php");
+  exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,26 +47,32 @@
 
     .boton1 {
       font-weight: bold;
-      margin-top: 15px;
       background-color: #f12525;
       color: black;
-      padding: 15px 80px;
+      padding: 15px 40px;
       border: none;
       border-radius: 4px;
       cursor: pointer;
       font-size: 14px;
+      margin-left: 70px;
     }
 
     .boton2 {
+      display: inline-block;
       font-weight: bold;
-      margin-top: 15px;
       background-color: #82d8e7;
       color: black;
-      padding: 15px 80px;
+      padding: 15px 40px;
       border: none;
       border-radius: 4px;
       cursor: pointer;
       font-size: 14px;
+      text-decoration: none;
+      margin-left: 180px;
+    }
+
+    form {
+      display: inline-block;
     }
   </style>
 </head>
@@ -55,12 +81,10 @@
   <div class="botones">
     <h1>Are you sure you want to delete this student?</h1>
 
-    <button class="boton1">Yes,delete</button>
-
-    <a href="index.php">
-      <button class="boton2">Cancel</button>
-    </a>
-
+    <form action="" method="POST">
+      <input type="submit" class="boton1" value="Yes, delete">
+    </form>
+    <a href="index.php" class="boton2">Cancel</a>
   </div>
 </body>
 
