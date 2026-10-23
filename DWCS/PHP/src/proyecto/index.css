@@ -1,0 +1,35 @@
+  * {
+    margin: 0;
+  }
+
+  body {
+    background-color: #FFE9F3;
+  }
+
+  .header {
+    background-color: #2E0123;
+    padding: 2vb;
+    color: #FFCB5C;
+  }
+
+  .header h1 {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .boton1 {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    min-height: 32px;
+    background-color: #FFCB5C;
+    font-weight: bold;
+    text-decoration: none;
+    color: #2E0123;
+  }

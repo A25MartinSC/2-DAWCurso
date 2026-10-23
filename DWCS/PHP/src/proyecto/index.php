@@ -1,3 +1,11 @@
+<?php
+$moneda = 'Euro(€)';
+
+if (isset($_GET['moneda'])) {
+  $moneda = $_GET['moneda'];
+  setcookie('moneda', $moneda, time() + (86400 * 30), "/");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +13,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Piggy Bank</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
@@ -31,12 +40,17 @@
 
   <div class="moneda">
     <p>Currency:</p>
-    <select>
-      <option>Euro (€)</option>
-      <option>USD ($)</option>
-      <option>Pound (£)</option>
-      <option>JPY (¥)</option>
-    </select>
+    <form method="get" action="">
+      <select>
+        <?php
+        $opciones = ['Euro (€)', 'USD ($)', 'Pound (£)', 'JPY (¥)'];
+        foreach ($opciones as $opcion) {
+          $selected = ($opcion === $moneda) ? 'selected' : '';
+          echo "<option value=\"$opcion\" $selected>$opcion</option>";
+        }
+        ?>
+      </select>
+    </form>
   </div>
 
   <div class="tabla">
@@ -51,7 +65,23 @@
   </div>
 
   <div class="total">
-    <h1>Total Blance:</h1>
+    <h1>Total Blance:
+      <?php
+      if (isset($_COOKIE[$moneda == 'Euro (€)'])) {
+        echo "€ <br>";
+      }
+      if (isset($_COOKIE[$moneda == 'USD ($)'])) {
+        echo "$ <br>";
+      }
+      if (isset($_COOKIE[$moneda == 'Pound (£)'])) {
+        echo "£ <br>";
+      }
+      if (isset($_COOKIE[$moneda == 'JPY (¥)'])) {
+        echo "¥ <br>";
+      }
+
+      ?>
+    </h1>
   </div>
 </body>
 
