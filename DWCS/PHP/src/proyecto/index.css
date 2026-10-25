@@ -1,35 +1,169 @@
-  * {
-    margin: 0;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500&display=swap');
 
-  body {
-    background-color: #FFE9F3;
-  }
+body {
+  font-family: 'Alegreya Sans', sans-serif;
+  background-color: #ffeaf5;
+  color: #2b0020;
+  max-width: 400px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
 
-  .header {
-    background-color: #2E0123;
-    padding: 2vb;
-    color: #FFCB5C;
-  }
+/* ---------- HEADER ---------- */
+.header {
+  background-color: #2b0020;
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+}
 
-  .header h1 {
-    align-items: center;
-    justify-content: center;
-  }
+.header img {
+  width: 30px;
+}
 
-  .boton1 {
-    padding: 6px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 40px;
-    min-height: 32px;
-    background-color: #FFCB5C;
-    font-weight: bold;
-    text-decoration: none;
-    color: #2E0123;
-  }
+.header h1 {
+  flex: 1;
+  text-align: center;
+  color: #ffc95c;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* ---------- NEW TRANSACTION ---------- */
+.añadir {
+  border: 1px solid #2b0020;
+  margin: 20px 35px;
+  padding: 5px 8px 8px 8px;
+}
+
+.añadir h3 {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0 0 5px 0;
+}
+
+.formFila {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+.campo input,
+.campo select {
+  width: 70px;
+  height: 20px;
+  box-sizing: border-box;
+  border: 1px solid #2b0020;
+  border-radius: 3px;
+  background-color: #ffffff;
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+.boton1 {
+  background-color: #ffc95c;
+  color: #2b0020;
+  border: none;
+  border-radius: 5px;
+  padding: 3px 8px;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 14px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+/* ---------- CURRENCY ---------- */
+.moneda {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 35px 15px 35px;
+}
+
+.moneda p {
+  margin: 0 3px 0 0;
+  font-size: 16px;
+}
+
+.moneda form {
+  margin: 0;
+}
+
+.moneda select {
+  width: 75px;
+  font-size: 12px;
+  border: 1px solid #2b0020;
+  border-radius: 3px;
+  background-color: #ffffff;
+}
+
+/* ---------- TABLE ---------- */
+.tabla {
+  margin: 0 35px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.tabla table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla th {
+  background-color: #2b0020;
+  color: #ffc95c;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 8px;
+}
+
+.tabla td {
+  padding: 8px;
+  height: 18px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* La primera fila es la cabecera, así que las filas de datos empiezan en la 2 */
+.tabla tr:nth-child(even) {
+  background-color: #e8c0db;
+}
+
+.tabla tr:nth-child(odd) {
+  background-color: #d9b0ca;
+}
+
+.tabla tr:first-child {
+  background-color: #2b0020;
+}
+
+.gasto {
+  color: #cc0000;
+}
+
+.ingreso {
+  color: #00a800;
+}
+
+.total {
+  border: 1px solid #2b0020;
+  margin: 20px 35px 0 35px;
+  padding: 3px 8px;
+}
+
+.total h1 {
+  margin: 0;
+  text-align: right;
+  font-size: 22px;
+  font-weight: 400;
+}
