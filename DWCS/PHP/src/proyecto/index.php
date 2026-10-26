@@ -1,23 +1,22 @@
 <?php
 require_once("Operations.php");
 
-// Monedas disponibles y su símbolo
+//Opciones de monedas
 $monedas = [
-  'Euro (€)' => '€',
-  'USD ($)' => '$',
+  'Euro (€)'  => '€',
+  'USD ($)'   => '$',
   'Pound (£)' => '£',
-  'JPY (¥)' => '¥'
+  'JPY (¥)'   => '¥'
 ];
 
-// Moneda por defecto
 $moneda = 'Euro (€)';
 
-// Si hay cookie guardada, la usamos
+//Leer cookie si existe
 if (isset($_COOKIE['moneda']) && isset($monedas[$_COOKIE['moneda']])) {
   $moneda = $_COOKIE['moneda'];
 }
 
-// Si el usuario ha elegido una moneda nueva, la guardamos en la cookie
+//Si el usuario cambia la moneda, actualizamos variable y Cookie
 if (isset($_GET['moneda']) && isset($monedas[$_GET['moneda']])) {
   $moneda = $_GET['moneda'];
   setcookie('moneda', $moneda, time() + (86400 * 30), "/");
@@ -25,16 +24,16 @@ if (isset($_GET['moneda']) && isset($monedas[$_GET['moneda']])) {
 
 $simbolo = $monedas[$moneda];
 
-// Conexión con la base de datos
+// Conexión a la base de datos 
 $operations = new Operations();
 
-// Si se ha enviado el formulario, añadimos la transacción
+// Procesar formulario POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $concepto = trim($_POST['concept']);
   $importe = (float) $_POST['amount'];
   $tipo = $_POST['type'];
 
-  if ($concepto !== '' && ($tipo === 'Expense' || $tipo === 'Income')) {
+  if ($concepto !== '' && $importe > 0 && ($tipo === 'Expense' || $tipo === 'Income')) {
     $money = new Money();
     $money->setConcept($concepto);
     $money->setAmount($importe);
@@ -44,28 +43,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $operations->addMoney($money);
   }
 
-  // Redirigimos para que no se repita al recargar
   header('Location: ' . $_SERVER['PHP_SELF']);
   exit;
 }
 
-// Cogemos todas las transacciones de la base de datos
+// Obtener transacciones y calcular balance
 $listaMoney = $operations->getAllMoney();
 
-// Calculamos el balance total
 $balance = 0;
 foreach ($listaMoney as $money) {
   if ($money->getType() === 'Income') {
-    $balance = $balance + $money->getAmount();
+    $balance += $money->getAmount();
   } else {
-    $balance = $balance - $money->getAmount();
+    $balance -= $money->getAmount();
   }
 }
 
+// Cerrar conexión
 $operations->closeConnection();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -90,7 +88,7 @@ $operations->closeConnection();
 
       <div class="campo">
         <label for="amount">Amount</label>
-        <input type="number" step="0.01" min="0" id="amount" name="amount" required>
+        <input type="number" step="0.01" min="0.01" id="amount" name="amount" required>
       </div>
 
       <div class="campo">
@@ -109,12 +107,11 @@ $operations->closeConnection();
     <p>Currency:</p>
     <form method="get" action="">
       <select name="moneda" onchange="this.form.submit()">
-        <?php
-        foreach ($monedas as $opcion => $sim) {
-          $selected = ($opcion === $moneda) ? 'selected' : '';
-          echo "<option value=\"$opcion\" $selected>$opcion</option>";
-        }
-        ?>
+        <?php foreach ($monedas as $opcion => $sim): ?>
+          <option value="<?= $opcion ?>" <?= ($opcion === $moneda) ? 'selected' : '' ?>>
+            <?= $opcion ?>
+          </option>
+        <?php endforeach; ?>
       </select>
     </form>
   </div>
@@ -126,38 +123,22 @@ $operations->closeConnection();
         <th>Amount</th>
         <th>Type</th>
         <th>Date</th>
+        <th>Action</th>
       </tr>
-      <?php
-      // Filas con las transacciones de la base de datos
-      foreach ($listaMoney as $money) {
-        $clase = ($money->getType() === 'Income') ? 'ingreso' : 'gasto';
-        $concepto = htmlspecialchars($money->getConcept());
-        $importe = number_format($money->getAmount(), 2, ',', '.');
-        $fecha = date('j-n-Y', strtotime($money->getDate()));
-
-        echo "<tr>";
-        echo "<td>$concepto</td>";
-        echo "<td>$importe $simbolo</td>";
-        echo "<td class=\"$clase\">" . $money->getType() . "</td>";
-        echo "<td>$fecha</td>";
-        echo "</tr>";
-      }
-
-      // Filas vacías hasta llegar a 5, como en el diseño
-      $total = count($listaMoney);
-      for ($i = $total; $i < 5; $i++) {
-        echo "<tr><td></td><td></td><td></td><td></td></tr>";
-      }
-      ?>
+      <?php foreach ($listaMoney as $money): ?>
+        <tr>
+          <td><?= $money->getConcept() ?></td>
+          <td><?= number_format($money->getAmount(), 2, ',', '.') ?> <?= $simbolo ?></td>
+          <td><?= $money->getType() ?></td>
+          <td><?= $money->getDate() ?></td>
+          <td><?= "<a href='cancelMoney.php?id=" . $money->getId() . "' class='boton2'>Cancel</a>"; ?></td>
+        </tr>
+      <?php endforeach; ?>
     </table>
   </div>
 
   <div class="total">
-    <h1>Total Balance:
-      <?php
-      echo number_format($balance, 2, ',', '.') . $simbolo;
-      ?>
-    </h1>
+    <h1>Total Balance: <?= number_format($balance, 2, ',', '.') ?> <?= $simbolo ?></h1>
   </div>
 </body>
 

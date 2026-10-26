@@ -13,7 +13,7 @@ class Operations
     $host = 'mysql';          // The service name in docker-compose (not 'localhost')
     $db   = 'app';        // Database name
     $user = 'app';        // MySQL username
-    $pass = 'app_password';    // MySQL password
+    $pass = 'app_password';    // MySQL passwordm
     $charset = 'utf8mb4';
 
     // DSN (Data Source Name)
@@ -98,4 +98,19 @@ class Operations
       throw $erro;
     }
   }
+  function deleteMoney($id)
+  {
+    try {
+      $this->conn->beginTransaction();
+      $stmt = $this->conn->prepare("delete from money where id=?");
+      $stmt->execute([$id]);
+      $numberOfAddedRows = $stmt->rowCount();
+      $this->conn->commit();
+      return $numberOfAddedRows;
+    } catch (PDOException $e) {
+      // roll back the transaction if something failed
+      $this->conn->rollback();
+      throw $e;
+    }
+  } //delete
 }
