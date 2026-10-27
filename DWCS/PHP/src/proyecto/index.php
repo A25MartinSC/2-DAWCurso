@@ -78,67 +78,69 @@ $operations->closeConnection();
     <h1>Piggy Bank</h1>
   </div>
 
-  <div class="añadir">
-    <h3>New Transaction</h3>
-    <form class="formFila" action="" method="post">
-      <div class="campo">
-        <label for="concept">Concept</label>
-        <input type="text" id="concept" name="concept" required>
-      </div>
+  <div class="container">
+    <div class="añadir">
+      <h3>New Transaction</h3>
+      <form class="formFila" action="" method="post">
+        <div class="campo">
+          <label for="concept">Concept</label>
+          <input type="text" id="concept" name="concept" required>
+        </div>
 
-      <div class="campo">
-        <label for="amount">Amount</label>
-        <input type="number" step="0.01" min="0.01" id="amount" name="amount" required>
-      </div>
+        <div class="campo">
+          <label for="amount">Amount</label>
+          <input type="number" step="0.01" min="0.01" id="amount" name="amount" required>
+        </div>
 
-      <div class="campo">
-        <label for="type">Type</label>
-        <select id="type" name="type">
-          <option value="Expense">Expense</option>
-          <option value="Income">Income</option>
+        <div class="campo">
+          <label for="type">Type</label>
+          <select id="type" name="type">
+            <option value="Expense">Expense</option>
+            <option value="Income">Income</option>
+          </select>
+        </div>
+
+        <input class="boton1" type="submit" value="Add">
+      </form>
+    </div>
+
+    <div class="moneda">
+      <p>Currency:</p>
+      <form method="get" action="">
+        <select name="moneda" onchange="this.form.submit()">
+          <?php foreach ($monedas as $opcion => $sim): ?>
+            <option value="<?= $opcion ?>" <?= ($opcion === $moneda) ? 'selected' : '' ?>>
+              <?= $opcion ?>
+            </option>
+          <?php endforeach; ?>
         </select>
-      </div>
+      </form>
+    </div>
 
-      <input class="boton1" type="submit" value="Add">
-    </form>
-  </div>
-
-  <div class="moneda">
-    <p>Currency:</p>
-    <form method="get" action="">
-      <select name="moneda" onchange="this.form.submit()">
-        <?php foreach ($monedas as $opcion => $sim): ?>
-          <option value="<?= $opcion ?>" <?= ($opcion === $moneda) ? 'selected' : '' ?>>
-            <?= $opcion ?>
-          </option>
-        <?php endforeach; ?>
-      </select>
-    </form>
-  </div>
-
-  <div class="tabla">
-    <table>
-      <tr>
-        <th>Concept</th>
-        <th>Amount</th>
-        <th>Type</th>
-        <th>Date</th>
-        <th>Action</th>
-      </tr>
-      <?php foreach ($listaMoney as $money): ?>
+    <div class="tabla">
+      <table>
         <tr>
-          <td><?= $money->getConcept() ?></td>
-          <td><?= number_format($money->getAmount(), 2, ',', '.') ?> <?= $simbolo ?></td>
-          <td><?= $money->getType() ?></td>
-          <td><?= $money->getDate() ?></td>
-          <td><?= "<a href='cancelMoney.php?id=" . $money->getId() . "' class='boton2'>Cancel</a>"; ?></td>
+          <th>Concept</th>
+          <th>Amount</th>
+          <th>Type</th>
+          <th>Date</th>
+          <th>Action</th>
         </tr>
-      <?php endforeach; ?>
-    </table>
-  </div>
+        <?php foreach ($listaMoney as $money): ?>
+          <tr>
+            <td><?= $money->getConcept() ?></td>
+            <td><?= number_format($money->getAmount(), 2, ',', '.') ?> <?= $simbolo ?></td>
+            <td><?= $money->getType() ?></td>
+            <td><?= $money->getDate() ?></td>
+            <td><?= "<a href='cancelMoney.php?id=" . $money->getId() . "' class='boton2'>Cancel</a>"; ?></td>
+          </tr>
+        <?php endforeach; ?>
+      </table>
+    </div>
 
-  <div class="total">
-    <h1>Total Balance: <?= number_format($balance, 2, ',', '.') ?> <?= $simbolo ?></h1>
+    <div class="total">
+      <h1>Total Balance: <?= number_format($balance, 2, ',', '.') ?> <?= $simbolo ?></h1>
+    </div>
   </div>
 </body>
 

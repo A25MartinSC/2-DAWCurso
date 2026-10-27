@@ -11,6 +11,7 @@ body {
   box-sizing: border-box;
 }
 
+/* Header a ancho completo */
 .header {
   background-color: #2b0020;
   display: flex;
@@ -31,16 +32,23 @@ body {
   margin: 0;
 }
 
+
+.container {
+  max-width: 800px;
+  width: 70%;
+  margin: 20px auto;
+}
+
 .añadir {
   border: 1px solid #2b0020;
-  margin: 20px;
-  padding: 10px 15px;
+  margin-bottom: 20px;
+  padding: 15px;
 }
 
 .añadir h3 {
   font-size: 14px;
   font-weight: 400;
-  margin: 0 0 5px 0;
+  margin: 0 0 10px 0;
 }
 
 .formFila {
@@ -62,8 +70,8 @@ body {
 
 .campo input,
 .campo select {
-  width: 100px;
-  height: 25px;
+  width: 120px;
+  height: 28px;
   box-sizing: border-box;
   border: 1px solid #2b0020;
   border-radius: 3px;
@@ -87,11 +95,11 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin: 0 20px 15px 20px;
+  margin-bottom: 15px;
 }
 
 .moneda p {
-  margin: 0 3px 0 0;
+  margin: 0 5px 0 0;
   font-size: 16px;
 }
 
@@ -108,7 +116,7 @@ body {
 }
 
 .tabla {
-  margin: 0 20px;
+  margin-bottom: 20px;
   border-radius: 15px;
   overflow: hidden;
 }
@@ -147,8 +155,7 @@ body {
 
 .total {
   border: 1px solid #2b0020;
-  margin: 20px 20px 0 20px;
-  padding: 5px 12px;
+  padding: 8px 12px;
 }
 
 .total h1 {
