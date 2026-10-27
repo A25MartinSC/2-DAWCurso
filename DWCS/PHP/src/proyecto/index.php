@@ -3,13 +3,13 @@ require_once("Operations.php");
 
 //Opciones de monedas
 $monedas = [
-  'Euro (€)'  => '€',
-  'USD ($)'   => '$',
-  'Pound (£)' => '£',
-  'JPY (¥)'   => '¥'
+  "euro" => ["text" => "Euro (€)", "value" => "€"],
+  "dollar" => ["text" => "USD ($)", "value" => "$"],
+  "pound" => ["text" => "Pound (£)", "value" => "£"],
+  "yen" => ["text" => "JPY (¥)", "value" => "¥"],
 ];
 
-$moneda = 'Euro (€)';
+$moneda = 'euro'; // Por defecto la clave del array
 
 //Leer cookie si existe
 if (isset($_COOKIE['moneda']) && isset($monedas[$_COOKIE['moneda']])) {
@@ -19,10 +19,10 @@ if (isset($_COOKIE['moneda']) && isset($monedas[$_COOKIE['moneda']])) {
 //Si el usuario cambia la moneda, actualizamos variable y Cookie
 if (isset($_GET['moneda']) && isset($monedas[$_GET['moneda']])) {
   $moneda = $_GET['moneda'];
-  setcookie('moneda', $moneda, time() + (86400 * 30), "/");
+  setcookie('moneda', $moneda, time() + (86400 * 30), "/"); // <- Corregido el *
 }
 
-$simbolo = $monedas[$moneda];
+$simbolo = $monedas[$moneda]['value']; // <- Corregido para obtener el valor correcto
 
 // Conexión a la base de datos 
 $operations = new Operations();
@@ -106,14 +106,16 @@ $operations->closeConnection();
 
     <div class="moneda">
       <p>Currency:</p>
-      <form method="get" action="">
-        <select name="moneda" onchange="this.form.submit()">
-          <?php foreach ($monedas as $opcion => $sim): ?>
-            <option value="<?= $opcion ?>" <?= ($opcion === $moneda) ? 'selected' : '' ?>>
-              <?= $opcion ?>
+      <form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <select name="moneda" id="moneda">
+          <option value="default" disabled>Select Option</option>
+          <?php foreach ($monedas as $key => $item): ?>
+            <option value="<?php echo $key; ?>" <?php echo ($moneda === $key) ? 'selected' : ''; ?>>
+              <?php echo $item['text']; ?>
             </option>
           <?php endforeach; ?>
         </select>
+        <input class="botonM" type="submit" value="Change">
       </form>
     </div>
 

@@ -91,6 +91,18 @@ body {
   cursor: pointer;
 }
 
+.botonM {
+  background-color: #ffc95c;
+  color: #2b0020;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 12px;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 14px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
 .moneda {
   display: flex;
   justify-content: flex-end;
@@ -106,6 +118,7 @@ body {
 .moneda form {
   margin: 0;
 }
+
 
 .moneda select {
   width: 75px;
