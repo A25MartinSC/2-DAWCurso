@@ -29,11 +29,22 @@ $simbolo = $monedas[$moneda]['value'];
 $operations = new Operations();
 
 // Procesar formulario POST
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $concepto = trim($_POST['concept']);
-  $importe = (float) $_POST['amount'];
-  $tipo = $_POST['type'];
+$conceptoErr = $importeErr = "";
+$concepto = $importe = "";
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  if (empty($_POST["concepto"])) {
+    $conceptoErr = "Concept is required";
+  } else {
+    $concepto = trim($_POST['concept']);
+  }
+
+  if (empty($_POST["importe"])) {
+    $importeErr = "Amount is required";
+  } else {
+    $importe = (float) $_POST['amount'];
+  }
+  $tipo = $_POST['type'];
   if ($concepto !== '' && $importe > 0 && ($tipo === 'Expense' || $tipo === 'Income')) {
     $money = new Money();
     $money->setConcept($concepto);
