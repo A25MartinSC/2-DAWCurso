@@ -19,10 +19,11 @@ if (isset($_COOKIE['moneda']) && isset($monedas[$_COOKIE['moneda']])) {
 //Si el usuario cambia la moneda, actualizamos variable y Cookie
 if (isset($_GET['moneda']) && isset($monedas[$_GET['moneda']])) {
   $moneda = $_GET['moneda'];
-  setcookie('moneda', $moneda, time() + (86400 * 30), "/"); // <- Corregido el *
+
+  setcookie('moneda', $moneda, time() + (86400 * 30), "/");
 }
 
-$simbolo = $monedas[$moneda]['value']; // <- Corregido para obtener el valor correcto
+$simbolo = $monedas[$moneda]['value'];
 
 // Conexión a la base de datos 
 $operations = new Operations();
@@ -106,16 +107,20 @@ $operations->closeConnection();
 
     <div class="moneda">
       <p>Currency:</p>
+
       <form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+
         <select name="moneda" id="moneda">
           <option value="default" disabled>Select Option</option>
           <?php foreach ($monedas as $key => $item): ?>
-            <option value="<?php echo $key; ?>" <?php echo ($moneda === $key) ? 'selected' : ''; ?>>
+            <option value="<?php echo $key; ?>">
               <?php echo $item['text']; ?>
             </option>
           <?php endforeach; ?>
         </select>
+
         <input class="botonM" type="submit" value="Change">
+
       </form>
     </div>
 
