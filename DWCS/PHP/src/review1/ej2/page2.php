@@ -1,3 +1,7 @@
+<?php
+$name = $_POST["name"];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +13,11 @@
 
 <body>
 
+  <h2>Information received</h2>
+  <p>Name: <?php echo $name; ?></p>
 
 
-
-  <a href="page3.php"> Third Page </a>
-</body>
+  </body>
+  <a href="page3.php?name=<?php echo $name ?>"> Third Page </a>
 
 </html>

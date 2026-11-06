@@ -1,12 +1,14 @@
 <html>
-  <head>
-    <title>Password Generator</title>
-  </head>
-  <body>
 
-    <h1>Password Generator</h1>
+<head>
+  <title>Password Generator</title>
+</head>
 
-    <form action="{% url 'password' %}">
+<body>
+
+  <h1>Password Generator</h1>
+
+  <form action="{% url 'password' %}">
 
     <select name="length">
       <option value="6">6</option>
@@ -15,11 +17,12 @@
       <option value="9">9</option>
       <option value="10">10</option>
       <option value="11">11</option>
-       <option value="12">12</option>
+      <option value="12">12</option>
     </select><br><br>
 
-    <input type="submit" value="Generate Password">
+    <input type="submit" value="Generate Password"><br><br>
+    <a href="{% url 'about' %}">About</a>
+  </form>
+</body>
 
-    </form>
-  </body>
-  </html>
+</html>

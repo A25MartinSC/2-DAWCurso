@@ -1,3 +1,7 @@
+<?php
+$name = $_GET["name"];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +12,10 @@
 </head>
 
 <body>
+
+  <h2>Information received</h2>
+  <p>Name: <?php echo $name; ?></p>
+
 
 </body>
 
