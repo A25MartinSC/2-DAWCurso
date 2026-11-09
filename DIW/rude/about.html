@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About us · rude</title>
+  <meta name="description" content="Born to make your world twirl. Meet the people behind rude.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header" id="cabecera">
+    <div class="container">
+      <a class="logo" href="index.html" aria-label="rude spaghetti bar, home" title="Go to home">
+        <span class="logo__word">rude</span><span class="logo__tag">Spaghetti bar</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round">
+          <path d="M3 6h18M3 12h18M3 18h18" />
+        </svg>
+      </button>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html" aria-current="page">About us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conocenos">
+    <section class="about-hero" id="portada-conocenos">
+      <div class="container">
+        <div>
+          <span class="eyebrow">About us</span>
+          <h1>Born to make your world twirl</h1>
+          <p>rude started with a simple idea: pasta shouldn't come with rules</p>
+        </div>
+        <div class="photo"><img src="img/about/about-hero.jpg"
+            alt="Friends sharing plates of pasta in a busy restaurant">
+        </div>
+      </div>
+    </section>
+
+    <section class="story" id="historia">
+      <div class="container">
+        <div class="photo"><img src="img/about/about-kitchen.jpg"
+            alt="Hands pulling fresh spaghetti out of a pasta machine" loading="lazy"></div>
+        <div>
+          <h2>From a tiny kitchen to your table</h2>
+          <p>Our kind of cooking starts small: a little flour, a good sauce and plenty of care.</p>
+          <p>We make spaghetti by hand and keep the menu simple. Every sauce gets its own personality.</p>
+          <p>Pull up a chair, pass the bread and make a happy mess. At our table, feeling at home is the whole point.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="team" id="equipo">
+      <div class="container">
+        <h2>Meet the people behind the mess</h2>
+        <p class="team__sub">Real faces and real opinions about spaghetti</p>
+        <div class="team__grid">
+          <article class="card-person">
+            <img src="img/about/marta.jpg" alt="Marta, pasta chef" loading="lazy">
+            <div class="card-person__body">
+              <span class="role role--yellow">Pasta chef</span>
+              <h3>Marta</h3>
+              <p class="quote">"Fresh pasta, every day."</p>
+              <p class="fact"><b>Favorite</b> Spicy Heat</p>
+              <p class="fact"><b>Rude rule</b> Never apologize for extra cheese</p>
+            </div>
+          </article>
+          <article class="card-person">
+            <img src="img/about/dani.jpg" alt="Dani, bar lead" loading="lazy">
+            <div class="card-person__body">
+              <span class="role role--pink">Bar lead</span>
+              <h3>Dani</h3>
+              <p class="quote">"Drinks to pair with every twirl."</p>
+              <p class="fact"><b>Favorite</b> Pepper Pop</p>
+              <p class="fact"><b>Rude rule</b> Sip loud, nobody minds</p>
+            </div>
+          </article>
+          <article class="card-person">
+            <img src="img/about/lucia.jpg" alt="Lucía, floor manager" loading="lazy">
+            <div class="card-person__body">
+              <span class="role role--red">Floor manager</span>
+              <h3>Lucía</h3>
+              <p class="quote">"Your table, your pace."</p>
+              <p class="fact"><b>Favorite</b> Green Glow</p>
+              <p class="fact"><b>Rude rule</b> Elbows on the table are welcome</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="reserva">
+      <div class="container">
+        <h2>Hungry? Find your spot.</h2>
+        <a class="btn btn--yellow" href="contact.html" title="Go to the contact page">Book a table</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="pie">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="logo__word">rude</span>
+          <p class="footer__tag">Slurp loud. Eat proud.</p>
+        </div>
+        <div class="footer__right">
+          <nav class="footer__nav" aria-label="Footer">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About us</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+          <div class="social">
+            <a href="#" aria-label="Instagram" title="Instagram"><img src="img/icons/instagram.jpg" alt=""></a>
+            <a href="#" aria-label="X" title="X"><img src="img/icons/x.jpg" alt=""></a>
+            <a href="#" aria-label="TikTok" title="TikTok"><img src="img/icons/tiktok.jpg" alt=""></a>
+          </div>
+        </div>
+      </div>
+      <p class="footer__bottom">© 2026 rude. Designed by Martin</p>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+
+</html>

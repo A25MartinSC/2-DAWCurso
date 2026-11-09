@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu · rude</title>
+  <meta name="description" content="Warm-ups, spaghetti and sweet spots. See the rude menu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header" id="cabecera">
+    <div class="container">
+      <a class="logo" href="index.html" aria-label="rude spaghetti bar, home" title="Go to home">
+        <span class="logo__word">rude</span><span class="logo__tag">Spaghetti bar</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round">
+          <path d="M3 6h18M3 12h18M3 18h18" />
+        </svg>
+      </button>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="menu.html" aria-current="page">Menu</a>
+        <a href="about.html">About us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="carta">
+    <section class="menu-sec menu-sec--yellow" id="entrantes">
+      <div class="container">
+        <span class="eyebrow">Starters</span>
+        <h2>Warm-up</h2>
+        <div class="grid grid--3">
+          <article class="dish">
+            <div class="dish__img"><img src="img/carta/garlic-bread.jpg" alt="Garlic bread" loading="lazy"></div>
+            <div class="dish__body">
+              <h3>Garlic bread</h3>
+              <p class="dish__desc">Golden, garlicky, gone in seconds.</p>
+              <div class="dish__foot"><span class="price">€4.50</span>
+                <img class="alergeno" src="img/carta/alergenos/gluten.jpg" alt="Gluten" title="Gluten">
+                <img class="alergeno" src="img/carta/alergenos/leche.jpg" alt="Dairy" title="Dairy">
+              </div>
+            </div>
+          </article>
+          <article class="dish">
+            <div class="dish__img"><img src="img/carta/mozzarella.jpg" alt="Mozzarella sticks" loading="lazy"></div>
+            <div class="dish__body">
+              <h3>Mozzarella sticks</h3>
+              <p class="dish__desc">Crispy outside. A proper cheese pull inside.</p>
+              <div class="dish__foot"><span class="price">€6.00</span>
+                <img class="alergeno" src="img/carta/alergenos/gluten.jpg" alt="Gluten" title="Gluten">
+                <img class="alergeno" src="img/carta/alergenos/leche.jpg" alt="Dairy" title="Dairy">
+                <img class="alergeno" src="img/carta/alergenos/huevo.jpg" alt="Egg" title="Egg">
+              </div>
+            </div>
+          </article>
+          <article class="dish">
+            <div class="dish__img"><img src="img/carta/burrata.jpg" alt="Burrata and tomato" loading="lazy"></div>
+            <div class="dish__body">
+              <h3>Burrata &amp; tomato</h3>
+              <p class="dish__desc">Creamy burrata meets juicy tomatoes.</p>
+              <div class="dish__foot"><span class="price">€7.50</span>
+                <img class="alergeno" src="img/carta/alergenos/leche.jpg" alt="Dairy" title="Dairy">
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-sec menu-sec--red" id="principales">
+      <div class="container">
+        <span class="eyebrow">Main</span>
+        <h2>This is a hot spot</h2>
+        <p class="menu-sec__sub">Choose your sauce</p>
+        <div class="grid grid--3">
+          <article class="dish">
+            <div class="dish__img"><img src="img/carta/red-alert.jpg" alt="Red Alert" loading="lazy"></div>
+            <div class="dish__body">
+              <h3>Red Alert</h3>
+              <p class="dish__desc">tomato &amp; basil</p>
+              <div class="dish__foot"><span class="price">€9.50</span>
+                <img class="alergeno" src="img/carta/alergenos/gluten.jpg" alt="Gluten" title="Gluten">
+                <img class="alergeno" src="img/carta/alergenos/huevo.jpg" alt="Egg" title="Egg">
+              </div>
+            </div>
+          </article>
+          <article class="dish">
+            <div class="dish__img"><img src="img/carta/spicy-heat.jpg" alt="Spicy Heat" loading="lazy"></div>
+            <div class="dish__body">
+              <h3>Spicy Heat</h3>
+              <p class="dish__desc">spicy arrabbiata</p>
+              <div class="dish__foot"><span class="price">€10.00</span>
+                <img class="alergeno" src="img/carta/alergenos/gluten.jpg" alt="Gluten" title="Gluten">
+                <img class="alergeno" src="img/carta/alergenos/huevo.jpg" alt="Egg" title="Egg">
+                <svg class="flame" viewBox="0 0 22 26" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linejoin="round" role="img" aria-label="Spicy">
+                  <title>Spicy</title>
+                  <path d="M11 2c1 5 8 8 8 15a8 8 0 0 1-16 0c0-4 2-6 4-8 0 3 1 4 2 4 0-4-1-7 2-11Z" />
+                </svg>
+              </div>
+            </div>
+          </article>
+          <article class="dish">
+            <div class="dish__img"><img src="img/carta/creamy-crush.jpg" alt="Creamy Crush" loading="lazy"></div>
+            <div class="dish__body">
+              <h3>Creamy Crush</h3>
+              <p class="dish__desc">carbonara</p>
+              <div class="dish__foot"><span class="price">€11.00</span>
+                <img class="alergeno" src="img/carta/alergenos/gluten.jpg" alt="Gluten" title="Gluten">
+                <img class="alergeno" src="img/carta/alergenos/huevo.jpg" alt="Egg" title="Egg">
+                <img class="alergeno" src="img/carta/alergenos/leche.jpg" alt="Dairy" title="Dairy">
+              </div>
+            </div>
+          </article>
+          <article class="dish">
+            <div class="dish__img"><img src="img/carta/pepper-pop.jpg" alt="Pepper Pop" loading="lazy"></div>
+            <div class="dish__body">
+              <h3>Pepper Pop</h3>
+              <p class="dish__desc">cheese &amp; black pepper</p>
+              <div class="dish__foot"><span class="price">€10.50</span>
+                <img class="alergeno" src="img/carta/alergenos/gluten.jpg" alt="Gluten" title="Gluten">
+                <img class="alergeno" src="img/carta/alergenos/huevo.jpg" alt="Egg" title="Egg">
+                <img class="alergeno" src="img/carta/alergenos/leche.jpg" alt="Dairy" title="Dairy">
+              </div>
+            </div>
+          </article>
+          <article class="dish">
+            <div class="dish__img"><img src="img/carta/green-glow.jpg" alt="Green Glow" loading="lazy"></div>
+            <div class="dish__body">
+              <h3>Green Glow</h3>
+              <p class="dish__desc">fresh pesto</p>
+              <div class="dish__foot"><span class="price">€10.50</span>
+                <img class="alergeno" src="img/carta/alergenos/gluten.jpg" alt="Gluten" title="Gluten">
+                <img class="alergeno" src="img/carta/alergenos/huevo.jpg" alt="Egg" title="Egg">
+                <img class="alergeno" src="img/carta/alergenos/leche.jpg" alt="Dairy" title="Dairy">
+                <img class="alergeno" src="img/carta/alergenos/secos.jpg" alt="Nuts" title="Nuts">
+              </div>
+            </div>
+          </article>
+          <article class="dish">
+            <div class="dish__img"><img src="img/carta/truffle-trip.jpg" alt="Truffle Trip" loading="lazy"></div>
+            <div class="dish__body">
+              <h3>Truffle Trip</h3>
+              <p class="dish__desc">truffle &amp; mushrooms</p>
+              <div class="dish__foot"><span class="price">€11.50</span>
+                <img class="alergeno" src="img/carta/alergenos/gluten.jpg" alt="Gluten" title="Gluten">
+                <img class="alergeno" src="img/carta/alergenos/huevo.jpg" alt="Egg" title="Egg">
+                <img class="alergeno" src="img/carta/alergenos/leche.jpg" alt="Dairy" title="Dairy">
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-sec menu-sec--pink" id="postres">
+      <div class="container">
+        <span class="eyebrow">Desserts</span>
+        <h2>This is the sweet spot</h2>
+        <div class="grid grid--2" style="margin-top:30px">
+          <article class="dish">
+            <div class="dish__img"><img src="img/carta/tiramisu.jpg" alt="Tiramisu" loading="lazy"></div>
+            <div class="dish__body">
+              <h3>Tiramisu</h3>
+              <p class="dish__desc">Coffee, cocoa and a spoonful of happiness.</p>
+              <div class="dish__foot"><span class="price">€5.50</span>
+                <img class="alergeno" src="img/carta/alergenos/gluten.jpg" alt="Gluten" title="Gluten">
+                <img class="alergeno" src="img/carta/alergenos/huevo.jpg" alt="Egg" title="Egg">
+                <img class="alergeno" src="img/carta/alergenos/leche.jpg" alt="Dairy" title="Dairy">
+              </div>
+            </div>
+          </article>
+          <article class="dish">
+            <div class="dish__img"><img src="img/carta/ice-cream.jpg" alt="Mixed berry ice cream" loading="lazy">
+              <span class="badge-limited">Limited time</span>
+            </div>
+            <div class="dish__body">
+              <h3>Mixed berry ice cream</h3>
+              <p class="dish__desc">A little tart. A lot to love.</p>
+              <div class="dish__foot"><span class="price">€5.00</span>
+                <img class="alergeno" src="img/carta/alergenos/leche.jpg" alt="Dairy" title="Dairy">
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="pie">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="logo__word">rude</span>
+          <p class="footer__tag">Slurp loud. Eat proud.</p>
+        </div>
+        <div class="footer__right">
+          <nav class="footer__nav" aria-label="Footer">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About us</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+          <div class="social">
+            <a href="#" aria-label="Instagram" title="Instagram"><img src="img/icons/instagram.jpg" alt=""></a>
+            <a href="#" aria-label="X" title="X"><img src="img/icons/x.jpg" alt=""></a>
+            <a href="#" aria-label="TikTok" title="TikTok"><img src="img/icons/tiktok.jpg" alt=""></a>
+          </div>
+        </div>
+      </div>
+      <p class="footer__bottom">© 2026 rude. Designed by Martin</p>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+
+</html>

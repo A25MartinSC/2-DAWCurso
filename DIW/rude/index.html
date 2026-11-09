@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>rude · Spaghetti bar</title>
+  <meta name="description" content="rude: spaghetti with attitude. Manners are optional.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- asterisco reutilizable (banner rojo y franja amarilla) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="ast" viewBox="0 0 24 24">
+      <path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7" fill="none" stroke="currentColor" stroke-width="2.2"
+        stroke-linecap="round" />
+    </symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html" aria-label="rude spaghetti bar, home">
+        <span class="logo__word">rude</span><span class="logo__tag">Spaghetti bar</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-controls="nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round">
+          <path d="M3 6h18M3 12h18M3 18h18" />
+        </svg>
+      </button>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero__copy">
+          <span class="eyebrow">Spaghetti bar</span>
+          <h1>Slurp loud<br>Eat proud</h1>
+          <p class="hero__lead">Spaghetti with attitude.<br>Manners are optional.</p>
+          <div class="hero__btns">
+            <a class="btn btn--red" href="menu.html">See the menu</a>
+            <a class="btn btn--yellow" href="contact.html">Book a table</a>
+          </div>
+        </div>
+        <div class="hero__art">
+          <img src="img/bowl.jpg" alt="A smiling red bowl of spaghetti with a fork twirling noodles" width="460">
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span>Twirl it</span><svg>
+            <use href="#ast" />
+          </svg><span>Own it</span><svg>
+            <use href="#ast" />
+          </svg><span>Slurp it</span><svg>
+            <use href="#ast" />
+          </svg><span>Love it</span><svg>
+            <use href="#ast" />
+          </svg>
+          <span>Twirl it</span><svg>
+            <use href="#ast" />
+          </svg><span>Own it</span><svg>
+            <use href="#ast" />
+          </svg><span>Slurp it</span><svg>
+            <use href="#ast" />
+          </svg><span>Love it</span><svg>
+            <use href="#ast" />
+          </svg>
+          <span>Twirl it</span><svg>
+            <use href="#ast" />
+          </svg><span>Own it</span><svg>
+            <use href="#ast" />
+          </svg><span>Slurp it</span><svg>
+            <use href="#ast" />
+          </svg><span>Love it</span><svg>
+            <use href="#ast" />
+          </svg>
+          <span>Twirl it</span><svg>
+            <use href="#ast" />
+          </svg><span>Own it</span><svg>
+            <use href="#ast" />
+          </svg><span>Slurp it</span><svg>
+            <use href="#ast" />
+          </svg><span>Love it</span><svg>
+            <use href="#ast" />
+          </svg>
+        </div>
+        <div class="marquee__group">
+          <span>Twirl it</span><svg>
+            <use href="#ast" />
+          </svg><span>Own it</span><svg>
+            <use href="#ast" />
+          </svg><span>Slurp it</span><svg>
+            <use href="#ast" />
+          </svg><span>Love it</span><svg>
+            <use href="#ast" />
+          </svg>
+          <span>Twirl it</span><svg>
+            <use href="#ast" />
+          </svg><span>Own it</span><svg>
+            <use href="#ast" />
+          </svg><span>Slurp it</span><svg>
+            <use href="#ast" />
+          </svg><span>Love it</span><svg>
+            <use href="#ast" />
+          </svg>
+          <span>Twirl it</span><svg>
+            <use href="#ast" />
+          </svg><span>Own it</span><svg>
+            <use href="#ast" />
+          </svg><span>Slurp it</span><svg>
+            <use href="#ast" />
+          </svg><span>Love it</span><svg>
+            <use href="#ast" />
+          </svg>
+          <span>Twirl it</span><svg>
+            <use href="#ast" />
+          </svg><span>Own it</span><svg>
+            <use href="#ast" />
+          </svg><span>Slurp it</span><svg>
+            <use href="#ast" />
+          </svg><span>Love it</span><svg>
+            <use href="#ast" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <section class="new">
+      <div class="container">
+        <h2>Taste our new additions</h2>
+        <div class="video">
+          <video preload="none" playsinline aria-label="Our new additions">
+            <source src="video/video.mp4" type="video/mp4">
+          </video>
+          <button class="video__play" aria-label="Play video">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 2.5v19l17-9.5z" fill="#111" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="join">
+      <div class="container">
+        <div>
+          <p class="join__eyebrow"><svg>
+              <use href="#ast" />
+            </svg>Join the rude revolution</p>
+          <h2>More noodles<br>Less manners</h2>
+        </div>
+        <div class="join__right">
+          <img class="drops" src="img/gotas.jpg" alt="">
+          <p>Life is too short for boring pasta</p>
+          <div class="join__labels"><span>Al dente always</span><span>Sauce no filters</span><span>Good vibe</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="logo__word">rude</span>
+          <p class="footer__tag">Slurp loud. Eat proud.</p>
+        </div>
+        <div class="footer__right">
+          <nav class="footer__nav" aria-label="Footer">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About us</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+          <div class="social">
+            <a href="#" aria-label="Instagram"><img src="img/icons/instagram.jpg" alt=""></a>
+            <a href="#" aria-label="X"><img src="img/icons/x.jpg" alt=""></a>
+            <a href="#" aria-label="TikTok"><img src="img/icons/tiktok.jpg" alt=""></a>
+          </div>
+        </div>
+      </div>
+      <p class="footer__bottom">© 2026 rude. Designed by Martin</p>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+
+</html>

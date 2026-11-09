@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact · rude</title>
+  <meta name="description" content="Find our spot: address, phone, email and opening hours for rude spaghetti bar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html" aria-label="rude spaghetti bar, home">
+        <span class="logo__word">rude</span><span class="logo__tag">Spaghetti bar</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-controls="nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round">
+          <path d="M3 6h18M3 12h18M3 18h18" />
+        </svg>
+      </button>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About us</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contact">
+    <div class="container">
+      <div>
+        <span class="eyebrow">Contact</span>
+        <h1>Find our spot</h1>
+        <form class="form" id="contact-form" novalidate>
+          <div class="field" data-required>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name">
+            <p class="field__error">*Campo obligatorio</p>
+          </div>
+          <div class="field" data-required>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email">
+            <p class="field__error">*Campo obligatorio</p>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+          <button class="btn btn--send" type="submit">Send</button>
+          <p class="form__ok" id="form-ok" role="status">Thanks! We'll get back to you soon.</p>
+        </form>
+      </div>
+
+      <div>
+        <div class="infos">
+          <div class="info info--yellow">
+            <span class="info__icon"><img src="img/icons/pin.jpg" alt=""></span>
+            <div>
+              <h3>Address</h3>
+              <p>7 Noodle Street, Madrid</p>
+            </div>
+          </div>
+          <div class="info">
+            <span class="info__icon"><img src="img/icons/phone.jpg" alt=""></span>
+            <div>
+              <h3>Phone</h3><a href="tel:900123456">900 123 456</a>
+            </div>
+          </div>
+          <div class="info info--pink">
+            <span class="info__icon"><img src="img/icons/mail.jpg" alt=""></span>
+            <div>
+              <h3>Email</h3><a href="mailto:hello@rude.com">hello@rude.com</a>
+            </div>
+          </div>
+          <div class="info">
+            <span class="info__icon"><img src="img/icons/clock.jpg" alt=""></span>
+            <div>
+              <h3>Opening hours</h3>
+              <p>Tuesday to Sunday, 1:00 pm to 11:30 pm</p>
+            </div>
+          </div>
+        </div>
+        <div class="map"><img src="img/map.jpg" alt="Map showing rude on Noodle Street, Madrid"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="logo__word">rude</span>
+          <p class="footer__tag">Slurp loud. Eat proud.</p>
+        </div>
+        <div class="footer__right">
+          <nav class="footer__nav" aria-label="Footer">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About us</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+          <div class="social">
+            <a href="#" aria-label="Instagram"><img src="img/icons/instagram.jpg" alt=""></a>
+            <a href="#" aria-label="X"><img src="img/icons/x.jpg" alt=""></a>
+            <a href="#" aria-label="TikTok"><img src="img/icons/tiktok.jpg" alt=""></a>
+          </div>
+        </div>
+      </div>
+      <p class="footer__bottom">© 2026 rude. Designed by Martin</p>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+
+</html>
