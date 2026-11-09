@@ -2,37 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 
-<h1>Tip Calculator</h1>
-
-<form action="">
-    <label for="bill">Bill amount:</label>
-    <input type="number" id="bill" name="bill" min="0" required>
-    <br><br>
+<body>
+  <h1>Tip Calculator</h1>
+  <form action="{% url 'result' %}">
+    <label for="bill">Bill amount (€):</label>
+    <input type="number" name="bill" id="bill" step=".01"><br><br>
 
     <label for="tip">Tip:</label>
-    <select id="tip" name="tip">
-        <option value="5">5 %</option>
-        <option value="10" selected>10 %</option>
-        <option value="15">15 %</option>
-        <option value="20">20 %</option>
-    </select>
-    <br><br>
+    <select name="tip" id="tip">
+      <option value="5">5%</option>
+      <option value="10" selected>10%</option>
+      <option value="15">15%</option>
+      <option value="20">20%</option>
+    </select><br><br>
 
     <label for="people">Number of people:</label>
-    <input type="number" id="people" name="people" min="1" value="1">
-    <br><br>
+    <input type="number" name="people" id="people" min="1" value="1"><br><br>
 
-    <label for="roundUp">Round up:</label>
-    <input type="checkbox" id="roundUp" name="roundUp">
-    <br><br>
+    <input type="checkbox" name="round" id="round">
+    <label for="round">Round up</label><br><br>
 
-    <button type="submit">Calculate</button>
-</form>
-<br>
+    <input type="submit">
+  </form><br>
+
+  <a href="{% url 'about' %}">About</a>
+</body>
 
 </html>

@@ -1,5 +1,5 @@
 """
-URL configuration for TipCalculatorProject project.
+URL configuration for tip_calculator project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -14,13 +14,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.urls import path
 from calculator import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('result/', views.result, name='result'),
-    path('about/', views.about, name='about'),
+     path('about/', views.about, name='about'),
+     path('result/', views.result, name='result'),
 ]
